@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
+import CartScreen from './screens/CartScreen'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           {/* because every page starts with / we need to put exact, so it knows to render HomeScreen only on this page */}
           <Route path="/" component={HomeScreen} exact />
           <Route path="/product/:id" component={ProductScreen} />
+          <Route path="/cart/:id?" component={CartScreen} />
         </Container>
       </main>
       <Footer />
