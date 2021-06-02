@@ -36,7 +36,7 @@ class Review(models.Model):
 class Order(models.Model):
     _id = models.AutoField(primary_key=True, editable=False)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    payment_method = models.CharField(max_length=200, null=True, blank=True)
+    paymentMethod = models.CharField(max_length=200, null=True, blank=True)
     taxPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
     shippingPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
     totalPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
@@ -47,7 +47,7 @@ class Order(models.Model):
     createdAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.created_at)
+        return str(self.createdAt)
 
 
 class OrderItem(models.Model):

@@ -88,9 +88,11 @@ function CartScreen({match, location, history}) {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                            <Button type='button' className='btn-block' disabled={cartItems.length === 0} onClick={checkoutHandler}>
-                                Proceed To Checkout
-                            </Button>
+                            <Row>
+                                <Button type='button' className='btn-block' disabled={cartItems.length === 0} onClick={checkoutHandler}>
+                                    Proceed To Checkout
+                                </Button>
+                            </Row>
                         </ListGroup.Item>
                     </ListGroup>
                 </Card>

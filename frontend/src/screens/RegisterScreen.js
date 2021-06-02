@@ -51,7 +51,7 @@ function RegisterScreen({location, history}) {
                         required
                         type="name"
                         placeholder="Name"
-                        value={name}   
+                        value={name}
                         onChange={(e) => setName(e.target.value)}>
                     </Form.Control>
                 </Form.Group>
