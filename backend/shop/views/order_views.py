@@ -8,6 +8,8 @@ from rest_framework import status
 from shop.models import Product, Order, OrderItem, ShippingAddress
 from shop.serializers import OrderSerializer
 
+from shop.utils import send_email_for_paid_order
+
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -99,6 +101,8 @@ def update_order_to_paid(request, pk):
     order.paidAt = datetime.now()
 
     order.save()
+
+    send_email_for_paid_order(order)
 
     return Response('Order was paid')
 

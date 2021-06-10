@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE, SET_NULL
 
+from PIL import Image
+
 
 class Product(models.Model):
     _id = models.AutoField(primary_key=True, editable=False)
@@ -19,6 +21,16 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+
+    #     img = Image.open(self.image.path)
+        
+    #     if img.height > 510 or img.width > 640:
+    #         output_size = (640, 510)
+    #         img.thumbnail(output_size)
+    #         img.save(self.image.path)
 
     
 class Review(models.Model):

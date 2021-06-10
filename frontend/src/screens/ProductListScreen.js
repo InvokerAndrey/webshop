@@ -30,9 +30,12 @@ function ProductListScreen({history, match}) {
     useEffect(() => {
         dispatch({type: PRODUCT_CREATE_RESET})
 
-        if(!userInfo.isAdmin) {
-            history.push('/login')
+        if(userInfo){
+            if(!userInfo.isAdmin) {
+                history.push('/login')
+            }
         }
+        
         // When product is created with sample data - redirect user to update page
         if(successCreate){
             history.push(`/admin/product/${createdProduct._id}/edit`)

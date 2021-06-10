@@ -138,7 +138,7 @@ function ProductScreen({ match, history }) {
                                 <Col md={6}>
                                     <ListGroup variant="flush">
 
-                                        <h4>Wtite a review</h4>
+                                        <h4>Write a review</h4>
 
                                         {loadingProductReview && <Loader />}
                                         {successProductReview && <Message variant="success">Review submitted</Message>}
